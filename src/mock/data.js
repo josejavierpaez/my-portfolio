@@ -36,7 +36,7 @@ export const projectsData = [
     info: '',
     info2: '',
     url: '',
-    repo: 'https://github.com/cobidev/react-simplefolio', // if no repo, the button will not show up
+    repo: 'https://github.com/josejavierpaez', // if no repo, the button will not show up
   },
   {
     id: nanoid(),

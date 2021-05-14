@@ -1,4 +1,4 @@
-# My personal porfolio
+# My personal portfolio
 
 ## Preview
 
