@@ -16,6 +16,7 @@ function App() {
   const [projects, setProjects] = useState([]);
   const [contact, setContact] = useState({});
   const [footer, setFooter] = useState({});
+  const [dark, setDark] = useState();
 
   useEffect(() => {
     setHero({ ...heroData });
@@ -23,16 +24,17 @@ function App() {
     setProjects([...projectsData]);
     setContact({ ...contactData });
     setFooter({ ...footerData });
+    setDark(false);
   }, []);
 
   return (
     <PortfolioProvider value={{ hero, about, projects, contact, footer }}>
-      <Menu />
-      <Hero />
+      <Menu dark={dark} setDark={setDark} />
+      <Hero dark={dark} />
       <About />
-      <Projects />
+      <Projects dark={dark} />
       <Contact />
-      <Footer />
+      <Footer dark={dark} />
     </PortfolioProvider>
   );
 }
