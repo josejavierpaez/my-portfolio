@@ -9,5 +9,5 @@
 
 ## soon
 
-- Dark mode
 - Blog section from http://dev.to/ API
+- send email section
