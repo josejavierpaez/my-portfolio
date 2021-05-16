@@ -1,10 +1,11 @@
 import React, { useContext, useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { Container } from 'react-bootstrap';
 import Fade from 'react-reveal/Fade';
 import { Link } from 'react-scroll';
 import PortfolioContext from '../../context/context';
 
-const Header = () => {
+const Header = ({ dark }) => {
   const { hero } = useContext(PortfolioContext);
   const { title, name, subtitle, cta } = hero;
 
@@ -22,7 +23,7 @@ const Header = () => {
   }, []);
 
   return (
-    <section id="hero" className="jumbotron">
+    <section id={dark ? 'hero-dark' : 'hero'} className="jumbotron">
       <Container>
         <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={500} distance="30px">
           <h1 className="hero-title">
@@ -46,4 +47,7 @@ const Header = () => {
   );
 };
 
+Header.propTypes = {
+  dark: PropTypes.bool,
+};
 export default Header;

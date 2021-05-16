@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { Container } from 'react-bootstrap';
@@ -8,7 +9,7 @@ import GithubButtons from '../GithubButtons/GithubButtons';
 
 import { githubButtons } from '../../mock/data';
 
-const Footer = () => {
+const Footer = ({ dark }) => {
   const { footer } = useContext(PortfolioContext);
   const { networks } = footer;
   const { isEnabled } = githubButtons;
@@ -17,7 +18,7 @@ const Footer = () => {
     <footer className="footer navbar-static-bottom">
       <Container>
         <span className="back-to-top">
-          <Link to="hero" smooth duration={1000}>
+          <Link to={dark ? 'hero-dark' : 'hero'} smooth duration={1000}>
             <i className="fa fa-angle-up fa-2x" aria-hidden="true" />
           </Link>
         </span>
@@ -51,5 +52,7 @@ const Footer = () => {
     </footer>
   );
 };
-
+Footer.propTypes = {
+  dark: PropTypes.bool,
+};
 export default Footer;
